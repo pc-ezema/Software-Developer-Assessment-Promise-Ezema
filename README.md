@@ -22,12 +22,16 @@ This Laravel application provides a simple authentication and authorization appl
   - `PermissionsSeeder`, `RolesSeeder`, and `RolePermissionSeeder` for initial setup.
   - initial roles are [`admin`, `user`]
   - Role and Permission Management is been performed by the `admin` role and also has the priviledge to assign permissions to other roles.
-- **Database**
-  - mysql
 
 ---
 
 ## Setup Instructions
+
+### Prerequisites
+- PHP >= 8.1
+- Composer
+- Laravel >= 10.x
+- MySQL
 
 ### 1. Clone the Repository
 ```bash
