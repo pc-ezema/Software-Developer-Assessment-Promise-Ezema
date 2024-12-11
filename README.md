@@ -1,6 +1,6 @@
 # Laravel Monolithic Authentication and Authorization Application
 
-This Laravel application provides a simple authenication and authorization application. The API is structured using versioning (`v1`) for easy scalability.
+This Laravel application provides a simple authentication and authorization application. The API is structured using versioning (`v1`) for easy scalability.
 
 ---
 
