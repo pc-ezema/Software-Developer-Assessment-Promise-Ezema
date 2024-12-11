@@ -51,3 +51,6 @@ php artisan jwt:secret
 
 ### 7. Start the Application
 php artisan serve
+
+### 8. Postman Documentation
+A Postman collection for the project is included inside the project directory. You can import this collection into Postman to easily test the API endpoints. Please find the Postman collection file in the project and import it into your Postman for API testing.

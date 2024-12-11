@@ -1,0 +1,576 @@
+{
+	"info": {
+		"_postman_id": "ef6d0f16-ea80-48d2-8ba3-3198e86a742a",
+		"name": "Software Developer Assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13019853"
+	},
+	"item": [
+		{
+			"name": "Authorization Needed",
+			"item": [
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Roles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <ACCESS_TOKEN>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/roles",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <ACCESS_TOKEN>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Subadmin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/role/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"role",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Role",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <ACCESS_TOKEN>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"roleId\": 3,\n    \"name\": \"Moderator\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/role/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"role",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Role",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <ACCESS_TOKEN>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/role/delete?roleId=3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"role",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "roleId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Role Permissions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <ACCESS_TOKEN>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/roles/view/permissions?roleId=5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"roles",
+								"view",
+								"permissions"
+							],
+							"query": [
+								{
+									"key": "roleId",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign Role Permission",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <ACCESS_TOKEN>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"roleId\": 1,\n    \"permissionId\": 13\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/roles/assign/permissions",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"roles",
+								"assign",
+								"permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Role Permission",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <ACCESS_TOKEN>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"roleId\": 5,\n    \"permissionId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/roles/delete/permissions",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"roles",
+								"delete",
+								"permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Permission",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <ACCESS_TOKEN>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"delete_role\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/permission/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"permission",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Permissions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <ACCESS_TOKEN>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/permissions",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Permission",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <ACCESS_TOKEN>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"permissionId\": 11,\n    \"name\": \"delete_role\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/permission/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"permission",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Permission",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <ACCESS_TOKEN>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/permission/delete?permissionId=12",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"permission",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "permissionId",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzMzOTUwOTgxLCJleHAiOjE3MzM5NTQ1ODEsIm5iZiI6MTczMzk1MDk4MSwianRpIjoiY0V2c2NVYjI0ZlZYZ1dlWCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.FFqQNG1Crq2vqsd2yGArDjwuD13qxXAJoQsiuqUGCEA",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Get Roles",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <ACCESS_TOKEN>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/view/roles",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"view",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"password123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Administrator\",\n  \"email\": \"admin@example.com\",\n  \"password\": \"password123\",\n  \"password_confirmation\": \"password123\",\n  \"role_id\": \"1\"   // 1 - admin, 2 - user\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forgot Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"user@example.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/forget-password",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"forget-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"code\": \"796605\",\n  \"password\": \"password123\",\n  \"password_confirmation\": \"password123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/reset-password",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"reset-password"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000/api/v1",
+			"type": "string"
+		}
+	]
+}

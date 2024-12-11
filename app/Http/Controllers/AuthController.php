@@ -27,7 +27,7 @@ class AuthController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function register(Request $request)
-    {   
+    {
         // Validate input
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
@@ -83,7 +83,7 @@ class AuthController extends Controller
         }
 
         // Check if the email exists
-        $user = User::where('email', $request->email)->first();
+        $user = User::where('email', $request->email)->with('role')->first();
 
         if (!$user) {
             return response()->json([
