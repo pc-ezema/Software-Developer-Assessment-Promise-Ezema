@@ -29,7 +29,7 @@ This Laravel application provides a simple authentication and authorization appl
 
 ### 1. Clone the Repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/pc-ezema/Software-Developer-Assessment-Promise-Ezema.git
 cd <project-directory>
 
 ### 2. Install Dependencies
